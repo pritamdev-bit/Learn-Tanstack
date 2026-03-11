@@ -13,9 +13,16 @@ app.get("/", (req: Request, res: Response) => {
 })
 
 app.get("/getusers", (req: Request, res: Response) => {
+  const page: number = Number(req.query.page) || 1;
+  
+  const start = page === 1 ? 0 : (page - 1) * 10;
+  const end = start + 10;
+  // console.log(users);
   res.status(200).json({
     message: "Success",
-    users: users
+    users: users.slice(start, end),
+    currentPage: page,
+    totalPages: users.length
   })
 })
 

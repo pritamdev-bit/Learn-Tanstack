@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(233, 233, 233);
+}
+
 .user-card {
   width: 280px;
   padding: 20px;
@@ -5,6 +9,7 @@
   background: white;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   font-family: Arial, sans-serif;
+  transition: all 0.8s ease-in-out;
 }
 
 .user-name {
@@ -17,4 +22,38 @@
   margin: 6px 0;
   font-size: 14px;
   color: #555;
+}
+
+.user-card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  cursor: pointer;
+  background: linear-gradient(0deg, red 5%, violet 80%);
+}
+
+.user-card:hover .user-name,
+.user-card:hover .user-info p {
+  color: white;
+}
+
+.joke-card {
+  width: 620px;
+  padding: 20px 40px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin: auto;
+  text-align: center;
+}
+
+.joke-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.joke-punchline {
+  font-size: 18px;
+  color: #666;
+  font-weight: 600;
 }
